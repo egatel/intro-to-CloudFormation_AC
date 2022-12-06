@@ -3,11 +3,17 @@ Resources:
     Type: "AWS::EC2::Instance"
     Properties:
       InstanceType: t2.micro
-      ImageId: ami-43874721 # Amazon Linux AMI in Sydney
+      ImageId: ami-076309742d466ad69 # Amazon Linux AMI in Frankfurt
       SecurityGroups: 
         - !Ref MySecurityGroup
       Tags:
         - Key: "Name"
+          Value: !Join [ " ", [ The, Instance, with, Fn, Join, and, Security, Group ] ]
+        - Key: Organization Unit
+          Value: Development
+        - Key: Project
+          Value: CloudFormation Intro
+        - Key: "Name New"
           Value: !Join 
             - ""
             - - "EC2 Instance for "
